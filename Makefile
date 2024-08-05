@@ -6,7 +6,7 @@ deploy:
 
 	docker run \
 	--name tf-serving \
-	-p 8501:8501 \
+	-p $(HOST_REST_PORT):8501 \
 	-v "$(shell pwd)/$(MODEL_PATH):/models/$(MODEL_NAME)" \
 	-e MODEL_NAME=$(MODEL_NAME) \
 	-e TF_CPP_VMODULE=http_server=$(ENABLE_DEBUG) \
@@ -18,7 +18,7 @@ deploy-config:
 
 	docker run \
 	--name tf-serving \
-	-p 8501:8501 \
+	-p $(HOST_REST_PORT):8501 \
 	-v "$(shell pwd)/$(MODEL_PATH):/models/$(MODEL_NAME)" \
 	-v "$(shell pwd)/$(MODEL_CONFIG)/models.config:/models/models.config" \
 	-e TF_CPP_VMODULE=http_server=$(ENABLE_DEBUG) \
