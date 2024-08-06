@@ -26,7 +26,7 @@ deploy-config:
 	--model_config_file=/models/models.config \
 	-model_config_file_poll_wait_seconds=$(MODEL_RELOAD_TIMEOUT)
 
-docker-armageddon:
+clean:
 	docker container rm -f tf-serving
 
 armageddon:

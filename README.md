@@ -12,7 +12,7 @@ To start, make sure you have Docker Desktop installed on the target for deployme
 3. Run `make deploy`
 
 > [!IMPORTANT]
-> If you encounter a build error during `make deploy`, run `make docker-armegeddon` or use the Docker Desktop GUI to remove the container before attempting to restart the process.
+> If you encounter a build error during `make deploy`, run `make clean` or use the Docker Desktop GUI to remove the container before attempting to restart the process.
 
 > [!NOTE]
 > The `serving` subdirectory is provided for convenience here, and may not be in sync with the most recent version. You can manually update this by running `make armegeddon` before either of the deploy commands to remove the subdirectory and ensure a clean, updated copy is cloned.
