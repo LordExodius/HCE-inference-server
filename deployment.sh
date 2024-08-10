@@ -1,0 +1,1 @@
+echo -e "\nHOST_REST_PORT=$PORT" >> .env
