@@ -2,7 +2,6 @@ include .env
 
 deploy:
 	docker pull tensorflow/serving
-	if test -d serving; then echo "already cloned"; else git clone https://github.com/tensorflow/serving; fi
 
 	docker run \
 	--name hce-inference-server \
@@ -14,7 +13,6 @@ deploy:
 
 deploy-config:
 	docker pull tensorflow/serving
-	if test -d serving; then echo "already cloned"; else git clone https://github.com/tensorflow/serving; fi
 
 	docker run \
 	--name hce-inference-server \
@@ -28,6 +26,9 @@ deploy-config:
 
 clean:
 	docker container rm -f hce-inference-server
+
+build:
+	docker build -t hce/inference-server .
 
 armageddon:
 	docker container rm -f hce-inference-server
