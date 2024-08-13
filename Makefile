@@ -3,6 +3,7 @@ include .env
 deploy:
 	docker pull tensorflow/serving
 
+	docker container rm -f hce-inference-server
 	docker run \
 	--name hce-inference-server \
 	-p $(HOST_REST_PORT):8501 \
@@ -14,6 +15,7 @@ deploy:
 deploy-config:
 	docker pull tensorflow/serving
 
+	docker container rm -f hce-inference-server
 	docker run \
 	--name hce-inference-server \
 	-p $(HOST_REST_PORT):8501 \

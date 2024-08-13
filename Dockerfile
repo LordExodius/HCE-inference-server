@@ -9,9 +9,9 @@ ENV MODEL_CONFIG=models
 WORKDIR /
 
 COPY ./models /models
-COPY ./deployment.sh /deployment.sh
+COPY ./deploy.sh /deploy.sh
 
-RUN chmod 777 /deployment.sh
+RUN chmod 777 /deploy.sh
 ENTRYPOINT []
 
-CMD ["/deployment.sh"]
+CMD ["/deploy.sh"]
